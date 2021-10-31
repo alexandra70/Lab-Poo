@@ -24,10 +24,7 @@ Moștenire (Inheritance)
 Numită și derivare, moștenirea este un mecanism de refolosire a codului specific limbajelor orientate obiect și reprezintă posibilitatea de a defini o clasă care extinde o altă clasă deja existentă. Ideea de bază este de a prelua funcționalitatea existentă într-o clasă și de a adăuga una nouă sau de a o modela pe cea existentă.
 Relații între obiecte:
 
-Agregare - has a
-Moștenire - is a
-Upcasting - convertire copil ⇒ părinte - realizată automat.
-Downcasting - convertire părinte ⇒copil - trebuie făcută explicit de către programator.
+Agregare - has a | Moștenire - is a | Upcasting - convertire copil ⇒ părinte - realizată automat. | Downcasting - convertire părinte ⇒copil - trebuie făcută explicit de către programator.
 
 Laboratorul 4: static și final; Singleton pattern
 -----
