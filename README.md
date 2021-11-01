@@ -1,4 +1,4 @@
-# Lab-Poo
+# Lab-Poo - Notiuni folosite in laboraotoare:
 
 Laboratorul 1: Intro
 -----
@@ -32,6 +32,21 @@ Variabilele declarate cu atributul final pot fi inițializate o **singură dată
 **Singleton Pattern** - (Lazy instantiation (este accesata memoria doar în momentul în care acest lucru este necesar))
 Pattern-ul Singleton este utilizat pentru a restricționa numărul de instanțieri ale unei clase la un singur obiect. Astfel, acest design pattern asigură crearea unei singure instanțe a clasei, oferind un punct de acces global al acesteia.
 Instanțierea eager, instanța clasei este creată la momentul CLASS LOADING.
+
+Laboratorul 5: Abstractizare
+-----
+Abstractizarea este unul dintre cele 4 principii POO de bază (Abstractizare, Încapsulare, Moștenire, Polimorfism). Abstractizarea nu permite ca anumite caracteristici să fie vizibile în exterior. Acest lucru se referă la construirea unei interfețe comune, a unui șablon general pe care se bazează o anumită categorie de obiecte, fără a descrie explicit caracteristicile fiecaruia. Obiectele cunosc interfața comună pe care o au dar nu și cum este ea interpretată de fiecare obiect in parte. Acest lucru este realizat prin utilizarea claselor abstracte și a interfețelor.
+Metodele suprascrise în clasele derivate vor fi apelate folosind dynamic binding (late binding). Acesta este un mecanism prin care compilatorul, în momentul în care nu poate determina implementarea unei metode în avans, lasă la latitudinea JVM-ului (mașinii virtuale) alegerea implementării potrivite, în funcţie de tipul real al obiectului. Această legare a implementării de numele metodei la momentul execuţiei stă la baza polimorfismului. Nu există instanţe ale unei clase abstracte, aceasta exprimând doar un punct de pornire pentru definirea unor instrumente reale. De aceea, crearea unui obiect al unei clase abstracte este o eroare, compilatorul Java semnalând acest fapt.
+ 
+ Laboratorul 6: Clase interne
+ -----
+ Clasele interne sunt de mai multe tipuri: clase interne normale (regular inner classes);mclase anonime (anonymous inner classes); clase interne statice (static nested classes);
+ clase interne metodelor (method-local inner classes) sau blocurilor;
+
+**Clase anonime :: În dezvoltarea software, există situații când o componentă a aplicației are o utilitate suficient de mare pentru a putea fi considerată o entitate separată (sau clasă). De multe ori, însă, aceasta nu este utilizată decât într-o porțiune restrânsă din aplicație, într-un context foarte specific (într-un lanț de moșteniri sau ierarhie de interfețe).
+
+Putem folosi clase interne anonime în locul definirii unei clase cu număr de utilizări reduse. Acestea nu au nume și apar în program ca instanțe ale unei clase moștenite (sau a unei interfețe extinse), care suprascriu (sau implementează) anumite metode.
+**Pentru clasele interne statice: Nu avem nevoie de un obiect al clasei externe pentru a crea un obiect al clasei interne. Nu putem accesa câmpuri nestatice ale clasei externe din clasă internă (nu avem o instanță a clasei externe).
 
 
 
