@@ -63,9 +63,19 @@ DOUBLE-DISPATCH - MECANISM DIN SPATELE VISITOR... SE REFERA LA FAPTUL CA METODA 
 DC UN EFECT E HOTARAT TINAND CONT DOAR DE UN SINGUR TIP, WE'RE DEALING WITH SINGLE-DISPATCH.**
 
 
+Laboratorul 9: Design patterns - Factory, Strategy, Observer
+-----
+**Patternurile de tip Factory sunt folosite pentru obiecte care generează instanțe de clase înrudite (implementează aceeași interfață, moștenesc aceeași clasă abstractă). Acestea sunt utilizate atunci când dorim să izolăm obiectul care are nevoie de o instanță de un anumit tip, de creearea efectivă acesteia. În plus clasa care va folosi instanța nici nu are nevoie să specifice exact subclasa obiectului ce urmează a fi creat, deci nu trebuie să cunoască toate implementările acelui tip, ci doar ce caracteristici trebuie să aibă obiectul creat. Din acest motiv, Factory face parte din categoria Creational Patterns, deoarece oferă o soluție legată de creearea obiectelor.
+pattern-uri creaționale ce decuplează logica creării obiectelor: Singleton, Factory
+pattern-uri comportamentale ce decuplează comunicarea dintre componente: Visitor, Observer, Strategy**
 
+Laboratorul 10: Design patterns - Command și Builder
+-----
 
-
+**Structura -Builder -
+Ideea principală este de a crea un obiect de tip Command care va reține parametrii pentru comandă. Comandantul reține o referință la comandă și nu la componenta comandată. Comanda propriu-zisă este anunțată obiectului Command (de către comandant) prin execuția unei metode specificate asupra lui. Obiectul Command este apoi responsabil de trimiterea (dispatch) comenzii către obiectele care o îndeplinesc (comandați).
+Builder
+Design pattern-ul Builder este un design pattern creațional, cu alte cuvinte, este utilizat pentru a crea și configura obiecte. Un builder este utilizat în mod obișnuit pentru eliminarea supraincarcarilor de constructori multipli și oferă o soluție mai flexibilă la crearea obiectelor complexe.**
 
 
 
