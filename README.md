@@ -77,7 +77,20 @@ Ideea principală este de a crea un obiect de tip Command care va reține parame
 Builder
 Design pattern-ul Builder este un design pattern creațional, cu alte cuvinte, este utilizat pentru a crea și configura obiecte. Un builder este utilizat în mod obișnuit pentru eliminarea supraincarcarilor de constructori multipli și oferă o soluție mai flexibilă la crearea obiectelor complexe.**
 
+Laboratorul 11: Genericitate
+------
 
+**Dacă ChildType este un subtip (clasă descendentă sau subinterfață) al lui ParentType, atunci o structură generică GenericStructure**<ChildType> **nu este un subtip al lui GenericStructure**<ParentType>.
+ **
+ În anumite situații, faptul că un wildcard poate fi înlocuit cu orice tip se poate dovedi un inconvenient. Mecanismul bazat pe Bounded Wildcards permite introducerea unor restricţii asupra tipurilor ce pot înlocui un wildcard, obligându-le să se afle într-o relație ierarhică (de descendență) față de un tip fix specificat.
+ **
+ 
+
+Laboratorul 12: Java features
+------
+
+Laboratorul 13: Excepții
+-----
 
 
 
