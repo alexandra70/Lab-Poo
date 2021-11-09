@@ -78,19 +78,52 @@ Builder
 Design pattern-ul Builder este un design pattern creațional, cu alte cuvinte, este utilizat pentru a crea și configura obiecte. Un builder este utilizat în mod obișnuit pentru eliminarea supraincarcarilor de constructori multipli și oferă o soluție mai flexibilă la crearea obiectelor complexe.**
 
 Laboratorul 11: Genericitate
-------
+-----
 
-**Dacă ChildType este un subtip (clasă descendentă sau subinterfață) al lui ParentType, atunci o structură generică GenericStructure**<ChildType> **nu este un subtip al lui GenericStructure**<ParentType>.
- **
- În anumite situații, faptul că un wildcard poate fi înlocuit cu orice tip se poate dovedi un inconvenient. Mecanismul bazat pe Bounded Wildcards permite introducerea unor restricţii asupra tipurilor ce pot înlocui un wildcard, obligându-le să se afle într-o relație ierarhică (de descendență) față de un tip fix specificat.
- **
+**Dacă ChildType este un subtip (clasă descendentă sau subinterfață) al lui ParentType, atunci o structură generică GenericStructure ChildType nu este un subtip al lui GenericStructure ParentType.
+In anumite situații, faptul că un wildcard poate fi înlocuit cu orice tip se poate dovedi un inconvenient. Mecanismul bazat pe Bounded Wildcards permite introducerea unor restricţii asupra tipurilor ce pot înlocui un wildcard, obligându-le să se afle într-o relație ierarhică (de descendență) față de un tip fix specificat.**
  
-
 Laboratorul 12: Java features
-------
+-----
+
+**Metodele statice din interfete, se comporta identic cu mh statice din din clase.
+Acestea nu sunt mostenite nici de clasele care implemetnteaza aceea interfata si nici de interfetele care extind interfata respectiva.
+Metodele default - public in mod default (MARCATA PRIN KEYWORDUL DEFAULT) se comporta ca o metoda obisnuita.
+Având în vedere că moștenirea multiplă nu este suportată în Java, mai precis extinderea a două clase în același timp, această problemă se propagă și la interfețe, în cazul metodelor default. Această problemă apare dacă o clasa implementează două interfețe, fiecare având o metodă default cu aceeași semnătură, în acest caz apărând eroare de compilare, care se rezolvă dacă respectiva clasă are propria sa implementare pentru metodele default din acele interfețe.
+Pentru a marca o interfață funcțională, este de recomandat să adăugam adnotarea @FunctionalInterface, prin care se permite existența unei singure metode abstracte în cadrul unei interfețe funcționale.
+Streamurile permit efectuare de op precum filter, map, reduce pe COLECTII intr un mod eficient.
+Map - asteapta ca arg o functie lambda, o functie de aplicate pe elemente.
+Filter - la fel si ea, ateapta ca arg o fct lambda, dar de aceasta data functie trebuie sa intoarca un boolean - CARE DETERMINA DACA VALOAREA RAMNA IN STREAM.
+Reduce - metoda care obtine un rezultata in urma aplicarii unei op pe intregul set de data.
+EX: (sunt numite metode terminale) sum, average, count, toArray. 
+Spre deosebire de map si filter asteapta 2 argumente si anume: un acc si o expresie.
+VAR NU E FOLOSIT IN DECALRATII(DOAR DC I SE SI VA ATRIBUI O VALOARE), SE VA FOLOSI DOAR IN BLOCURI DE COD.**
 
 Laboratorul 13: Excepții
 -----
+
+**Exceptie eveniment care perturba fluxul normal al executie instructiunilor unui program.
+Nu se poate separa secventa de instructiuni corespunzatoare exec normale a progrmaului de secventa care trateaza erorile. Normal ar fi ca dupa fiecare apel de functie sa fie verificate valorile de return, si astfel sa tratam posibilele erori care ar putea sa apara (medoda foarte greu de citit).
+LOGICA TRY-CATCH: SEEXECUTA INSTRUCTINUILE DIN BLOCUL TRY, IAR LA APARITIA UNEI STUATII EXCEPTIONALE SEMNAATE E O ANUMITA INSTR SE VA ABANDONA ECECUTIA CELORLALTE INSTR DIN BLOCUL TRY SI MAI APOI SE SARE DIRECT LA BLOCUL CATCH CORESPUNZATOR INSTR APARUTE. Cand o eroare se produce se creeaza un obiect exceptie si il va pasa spre runtime system. OBIECTUL EXCPTIE contine info despre situatie aparuta: tipul de exceptie + stiva de apeluri (stack trace) - punctul din program unde a intrevenit problema, reprezentat sub forma de lanturi de metode in care programul se alfa la acel moment. Pasare de mai sus (pasarea exceptiei la runtime system) poarta numele de throwing.
+In momentul in care se instantiaza un obiect exceptie - in stack trace se retine intreg lantul de metode apelate prin care s a ajuns la metoda curenta. STACK TRACE se poate afisa. Dc o functie arunca o exceptie si nu o prinde trebuie mentionata caluza throw in antet. Zona in care ma astept sa prin exceptia se numeste GUARDED REGION.
+Nu toate exceptiile terbbie sa fie throwable : 
+THROWABLE : (ERROR - UNCHECKER - programul nu isi poate reveni din ele, declansate de factor externi aplicatiei) SI (EXCEPTION - CHECKED : (RUNTIMEEXCEPTION + OTHER ECXEPTIONS - la fel ca si error, numai ca de data aceasta conditiile exceptionle sunt declansate de factori interni aplicatiei - aplicatia nu isi poate reveni din ele daca nu sunt tratate corespunzator cu throw).
+RunTimeExceptions: nullpointer, arithmetic, indexoutofbounds;
+Other Exceptions: IOex, filenotfound, nosuchmethod;
+THROWABLE = SUPERCLASA TUTUROR ERORILOR SI EXCEPTIILOR DIN JAVA.
+DOAR OBIECTELE CE EXTIND ACEASTA CLASA POT FI ARUNCATE CU INSTRUCTIUNEA throw.
+Toate exceptiile sunt checked, mai putin ERROR SI RunTimeException.
+EXCEPTIILE CHECKED SUNT CELE PRINSE CU BLOCURI TRY-CATCH.
+Metodele suprascrise pot arunca numai ex specificate de metoda din clasa parinte sau altele care DERIVA din aceasta.
+Chain-of-responsibility Pattern:
+Este o versiune orientata obiect a if, else if, else if.
+Blocuriele conditie pot fi dinamic aranjate si reconficonfigurate la momentul executei.
+Modelul chain este apropae identic cu metoda decoratorului, insa la decorator toate clasele se ocupa de cerere, in timp ce la chain of responsablity exact una dintre clase(din lant)se va ocupa de cerere.**
+
+
+
+
+
 
 
 
